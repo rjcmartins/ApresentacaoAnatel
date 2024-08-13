@@ -1,0 +1,99 @@
+<ion-view cache-view="false" hide-back-button="true" role="region">
+    <ion-header-bar role="heading" class="bar bar-header bar-default" xattr-theme="bar-default"
+                    data-component="crn-ion-header-bar">
+        <div side="left" class="buttons buttons-left header-item">
+            <button aria-labelledby="left_navicon_sr" class="button button-clear"
+                    ng-if="!Aluno.inserting && !Aluno.editing" menu-toggle="left"
+                    data-component="crn-button" xattr-type="button-clear">
+                <i class="icon ion-navicon"></i>
+                <span id="left_navicon_sr"
+                      class="sr-only">{{'Accessibility.Button.Aria.Label.NavIcon' | translate}}</span>
+            </button>
+            <button aria-labelledby="left_arrowback_sr" class="button button-clear"
+                    ng-if="Aluno.inserting || Aluno.editing"
+                    ng-click="Aluno.cancel()" data-component="crn-button" xattr-type="button-clear">
+                <i class="icon ion-ios-arrow-back"></i>
+                <span id="left_arrowback_sr" class="sr-only">{{'Roles.view.Voltar' | translate}}</span>
+            </button>
+        </div>
+        <h1 class="title">Aluno</h1>
+        <div side="right" class="buttons buttons-right header-item">
+            <button aria-labelledby="right_plus_sr" class="button button-clear"
+                    ng-if="!Aluno.inserting && !Aluno.editing"
+                    ng-click="Aluno.startInserting()" data-component="crn-button"
+                    xattr-type="button-clear">
+                <i class="icon ion-ios-plus-empty"></i>
+                <span id="right_plus_sr" class="sr-only">{{'Accessibility.Button.Aria.Label.Add' | translate}}</span>
+            </button>
+            <button aria-labelledby="right_checkmark_sr" class="button button-clear"
+                    ng-if="Aluno.inserting || Aluno.editing"
+                    ng-click="Aluno.post()" data-component="crn-button" xattr-type="button-clear">
+                <i class="icon ion-ios-checkmark"></i>
+                <span id="right_checkmark_sr"
+                      class="sr-only">{{'Accessibility.Button.Aria.Label.Save' | translate}}</span>
+            </button>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle"
+             data-component="crn-datasource" id="crn-datasource-906854">
+            <datasource data-component="crn-datasource"  name="Aluno"
+                        entity="app.Aluno" keys="_objectKey" rows-per-page="10"
+                        delete-message="Deseja remover?" class=""
+                        schema="[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;notEmpty&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;Nome&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;notEmpty&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;Matricula&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;notEmpty&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;DataNascimento&quot;,&quot;type&quot;:&quot;DateTime&quot;,&quot;nullable&quot;:true,&quot;notEmpty&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;_objectKey&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;notEmpty&quot;:false,&quot;key&quot;:true}]" ></datasource>
+        </div>
+
+        <div crn-datasource="Aluno" class="" ng-hide="Aluno.editing || Aluno.inserting">
+            <cron-list ng-model="vars.cronlistAluno" id="ion-list-main" options="{&quot;dataSourceScreen&quot;:{&quot;name&quot;:&quot;Aluno&quot;,&quot;entity&quot;:&quot;app.Aluno&quot;,&quot;entityDataSource&quot;:{&quot;id&quot;:&quot;app.Aluno&quot;,&quot;customId&quot;:&quot;Aluno&quot;,&quot;name&quot;:&quot;Aluno&quot;,&quot;customQueryName&quot;:&quot;app.Aluno&quot;,&quot;paramValues&quot;:[],&quot;entityFullName&quot;:&quot;app.entity.Aluno&quot;,&quot;schemaFields&quot;:[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;notEmpty&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;Nome&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;notEmpty&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;Matricula&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;notEmpty&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;DataNascimento&quot;,&quot;type&quot;:&quot;DateTime&quot;,&quot;nullable&quot;:true,&quot;notEmpty&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;_objectKey&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;notEmpty&quot;:false,&quot;key&quot;:true}],&quot;type&quot;:&quot;entity&quot;,&quot;hasError&quot;:false},&quot;schema&quot;:[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;notEmpty&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;Nome&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;notEmpty&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;Matricula&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;notEmpty&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;DataNascimento&quot;,&quot;type&quot;:&quot;DateTime&quot;,&quot;nullable&quot;:true,&quot;notEmpty&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;_objectKey&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;notEmpty&quot;:false,&quot;key&quot;:true}],&quot;id&quot;:&quot;app.Aluno&quot;},&quot;allowPaging&quot;:true,&quot;allowSorting&quot;:true,&quot;allowGrouping&quot;:false,&quot;allowSelectionTotalPageToShow&quot;:true,&quot;allowRefreshGrid&quot;:true,&quot;allowSelectionRow&quot;:true,&quot;hideModalButtons&quot;:true,&quot;editable&quot;:&quot;datasource&quot;,&quot;columns&quot;:[{&quot;dataType&quot;:&quot;Database&quot;,&quot;field&quot;:&quot;Nome&quot;,&quot;headerText&quot;:&quot;Nome&quot;,&quot;type&quot;:&quot;string&quot;,&quot;sortable&quot;:true,&quot;filterable&quot;:true,&quot;format&quot;:&quot;&quot;,&quot;visible&quot;:true,&quot;visibleCrud&quot;:true,&quot;linkParentType&quot;:&quot;screen&quot;,&quot;linkParentLoadIfEmpty&quot;:false,&quot;required&quot;:false,&quot;showAsImage&quot;:false,&quot;inputType&quot;:&quot;default&quot;,&quot;comboboxOptions&quot;:{&quot;dataSourceScreen&quot;:{&quot;entityDataSource&quot;:{&quot;hasError&quot;:false},&quot;schema&quot;:[]},&quot;relationDataSource&quot;:{&quot;entityDataSource&quot;:{&quot;hasError&quot;:false},&quot;schema&quot;:[]},&quot;staticDataSource&quot;:[],&quot;filterKeyValues&quot;:{&quot;&quot;:&quot;&quot;,&quot;contains&quot;:&quot;Contendo&quot;,&quot;startswith&quot;:&quot;Iniciando com&quot;,&quot;endswith&quot;:&quot;Final com&quot;},&quot;customTemplate&quot;:false,&quot;fillDatasource&quot;:false},&quot;aggregates&quot;:[],&quot;widthDevices&quot;:[],&quot;buttonColumns&quot;:[]},{&quot;dataType&quot;:&quot;Database&quot;,&quot;field&quot;:&quot;Matricula&quot;,&quot;headerText&quot;:&quot;Matricula&quot;,&quot;type&quot;:&quot;string&quot;,&quot;sortable&quot;:true,&quot;filterable&quot;:false,&quot;format&quot;:&quot;&quot;,&quot;visible&quot;:true,&quot;visibleCrud&quot;:true,&quot;linkParentType&quot;:&quot;screen&quot;,&quot;linkParentLoadIfEmpty&quot;:false,&quot;required&quot;:false,&quot;showAsImage&quot;:false,&quot;inputType&quot;:&quot;default&quot;,&quot;comboboxOptions&quot;:{&quot;dataSourceScreen&quot;:{&quot;entityDataSource&quot;:{&quot;hasError&quot;:false},&quot;schema&quot;:[]},&quot;relationDataSource&quot;:{&quot;entityDataSource&quot;:{&quot;hasError&quot;:false},&quot;schema&quot;:[]},&quot;staticDataSource&quot;:[],&quot;filterKeyValues&quot;:{&quot;&quot;:&quot;&quot;,&quot;contains&quot;:&quot;Contendo&quot;,&quot;startswith&quot;:&quot;Iniciando com&quot;,&quot;endswith&quot;:&quot;Final com&quot;},&quot;customTemplate&quot;:false,&quot;fillDatasource&quot;:false},&quot;aggregates&quot;:[],&quot;widthDevices&quot;:[],&quot;buttonColumns&quot;:[]},{&quot;dataType&quot;:&quot;Database&quot;,&quot;field&quot;:&quot;DataNascimento&quot;,&quot;headerText&quot;:&quot;Data Nascimento&quot;,&quot;type&quot;:&quot;date&quot;,&quot;sortable&quot;:true,&quot;filterable&quot;:false,&quot;visible&quot;:true,&quot;visibleCrud&quot;:true,&quot;linkParentType&quot;:&quot;screen&quot;,&quot;linkParentLoadIfEmpty&quot;:false,&quot;required&quot;:false,&quot;showAsImage&quot;:false,&quot;inputType&quot;:&quot;date&quot;,&quot;comboboxOptions&quot;:{&quot;dataSourceScreen&quot;:{&quot;entityDataSource&quot;:{&quot;hasError&quot;:false},&quot;schema&quot;:[]},&quot;relationDataSource&quot;:{&quot;entityDataSource&quot;:{&quot;hasError&quot;:false},&quot;schema&quot;:[]},&quot;staticDataSource&quot;:[],&quot;filterKeyValues&quot;:{&quot;&quot;:&quot;&quot;,&quot;contains&quot;:&quot;Contendo&quot;,&quot;startswith&quot;:&quot;Iniciando com&quot;,&quot;endswith&quot;:&quot;Final com&quot;},&quot;customTemplate&quot;:false,&quot;fillDatasource&quot;:false},&quot;dateOptions&quot;:{&quot;type&quot;:&quot;date&quot;,&quot;dateInput&quot;:true},&quot;aggregates&quot;:[],&quot;widthDevices&quot;:[],&quot;buttonColumns&quot;:[]},{&quot;dataType&quot;:&quot;Command&quot;,&quot;headerText&quot;:&quot;{{ 'Action' | translate }}&quot;,&quot;sortable&quot;:false,&quot;filterable&quot;:false,&quot;visible&quot;:true,&quot;visibleCrud&quot;:true,&quot;linkParentType&quot;:&quot;screen&quot;,&quot;linkParentLoadIfEmpty&quot;:false,&quot;command&quot;:&quot;edit|destroy&quot;,&quot;required&quot;:false,&quot;showAsImage&quot;:false,&quot;inputType&quot;:&quot;default&quot;,&quot;comboboxOptions&quot;:{&quot;dataSourceScreen&quot;:{&quot;entityDataSource&quot;:{&quot;hasError&quot;:false},&quot;schema&quot;:[]},&quot;relationDataSource&quot;:{&quot;entityDataSource&quot;:{&quot;hasError&quot;:false},&quot;schema&quot;:[]},&quot;staticDataSource&quot;:[],&quot;filterKeyValues&quot;:{&quot;&quot;:&quot;&quot;,&quot;contains&quot;:&quot;Contendo&quot;,&quot;startswith&quot;:&quot;Iniciando com&quot;,&quot;endswith&quot;:&quot;Final com&quot;},&quot;customTemplate&quot;:false,&quot;fillDatasource&quot;:false},&quot;aggregates&quot;:[],&quot;widthDevices&quot;:[],&quot;buttonColumns&quot;:[]}],&quot;toolBarButtons&quot;:[{&quot;type&quot;:&quot;Native&quot;,&quot;title&quot;:&quot;create&quot;}],&quot;details&quot;:[],&quot;groupings&quot;:[],&quot;fillDatasource&quot;:false,&quot;enableModalSaveAdd&quot;:false}" class="component-holder ng-binding ng-scope" data-component="crn-ion-list" id="crn-ion-list-91223">
+            </cron-list>
+        </div>
+        <div ng-show="Aluno.editing || Aluno.inserting">
+            <form crn-datasource="Aluno">
+                <div class="list"
+                     ng-disabled="!Aluno.editing &amp;&amp; !Aluno.inserting">
+            <!-- Nome begin -->
+            <label for="textinput-Nome-91223" class="item item-input item-stacked-label"
+                   data-component="crn-input-floating" id="lbl-Nome-91223">
+                <span class="input-label">Nome</span>
+                <input
+                        type="text"
+                        placeholder="Nome"
+                        ng-model="Aluno.active.Nome"
+                        id="textinput-Nome-91223"
+                        name="textinput-Nome"
+				
+                        mask=""
+				>
+            </label>
+            <!-- Matricula begin -->
+            <label for="textinput-Matricula-91223" class="item item-input item-stacked-label"
+                   data-component="crn-input-floating" id="lbl-Matricula-91223">
+                <span class="input-label">Matricula</span>
+                <input
+                        type="text"
+                        placeholder="Matricula"
+                        ng-model="Aluno.active.Matricula"
+                        id="textinput-Matricula-91223"
+                        name="textinput-Matricula"
+				
+                        mask=""
+				>
+            </label>
+            <!-- DataNascimento begin -->
+            <label for="textinput-DataNascimento-91223" class="item item-input item-stacked-label"
+                   data-component="crn-input-floating" id="lbl-DataNascimento-91223">
+                <span class="input-label">Data Nascimento</span>
+                <input aria-label="Data Nascimento" type="date"
+                       placeholder="Data Nascimento"
+                       ng-model="Aluno.active.DataNascimento"
+                       id="textinput-DataNascimento-91223" name="textinput-DataNascimento"
+                       
+                       mask="" >
+            </label>
+
+                    <!-- NtoN  -->
+                    <!-- NtoN  end-->
+            </form>
+        </div>
+    </ion-content>
+</ion-view>
